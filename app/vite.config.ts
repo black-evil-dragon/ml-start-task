@@ -18,6 +18,14 @@ export default defineConfig({
     },
   },
 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@app/styles/globals.scss";`
+      }
+    }
+  },
+
 
   build: {
     minify: 'esbuild',
@@ -26,8 +34,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          utils: ['lodash', 'axios']
+          vendor: ['react', 'react-dom']
         }
       }
     }

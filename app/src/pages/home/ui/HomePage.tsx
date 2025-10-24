@@ -1,12 +1,14 @@
 import React from 'react';
 
-const HomePage: React.FunctionComponent = () => {
-    return (
-        <>
-            HOME PAGE
 
-        </>
-    );
+import { Profile } from '@widgets/profile/';
+
+
+
+const HomePage: React.FunctionComponent = () => {
+    return (<>
+        <Profile />
+    </>);
 }
 
 export default HomePage;

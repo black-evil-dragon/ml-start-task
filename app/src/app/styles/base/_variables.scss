@@ -1,0 +1,22 @@
+$color-white: #fff;
+$color-black: #000;
+
+$color-primary: #00ADB5;
+
+$color-gray-light: #EEEEEE;
+$color-gray: #393E46;
+$color-gray-dark: #222831;
+
+
+$theme-colors: (
+    'light': (
+        'page': $color-gray-light,
+        'element': $color-white,
+        'text': $color-gray-dark,
+    ),
+    'dark': (
+        'page': $color-gray-dark,
+        'element': $color-gray,
+        'text': $color-white,
+    )
+);

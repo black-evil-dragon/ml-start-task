@@ -17,4 +17,4 @@ from [`https://colorhunt.co/palettes/popular`](https://colorhunt.co/palettes/pop
 
 # Вдохновение
 
-!<img src="./example.webp" alt="Описание" style="width: 80%; height: auto;" />
+<img src="./example.webp" alt="Описание" style="width: 80%; height: auto;" />

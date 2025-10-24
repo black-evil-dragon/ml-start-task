@@ -1,0 +1,1 @@
+export { FriendsCard } from './ui/FriendsCard'

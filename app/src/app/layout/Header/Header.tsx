@@ -1,8 +1,11 @@
 
+import styles from '@app/styles/components/header.module.scss'
+
+
 function Header() {
     return (
         <>
-            <header>
+            <header className={styles.header}>
                 HEADER
             </header>
         </>

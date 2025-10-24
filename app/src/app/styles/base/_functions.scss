@@ -1,0 +1,8 @@
+@function bg-color($type, $theme: 'light') {
+    $theme-map: map-get($bg-colors, $theme);
+    @return map-get($theme-map, $type);
+}
+
+@function calcFluid($min-value, $max-value, $min-vw: 320px, $max-vw: 1920px) {
+    @return calc(#{$min-value}px + (#{$max-value}px - #{$min-value}px) * (100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}));
+}
