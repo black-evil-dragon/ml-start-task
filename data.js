@@ -88,3 +88,23 @@ const experience = [
         }
     }
 ]
+
+
+// Контакты
+const CONTACTS = {
+  phone: {
+    text: "+7 911 449 39 01",
+  },
+  mail: {
+    text: "blackevildragon@mail.ru",
+  },
+  github: {
+    text: "https://github.com/black-evil-dragon",
+  },
+  telegram: {
+    text: "https://t.me/blackevil_dragon",
+  },
+  vk: {
+    text: "https://vk.com/blackevil_dragon",
+  },
+};
