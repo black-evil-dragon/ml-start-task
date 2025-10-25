@@ -1,3 +1,3 @@
-@import './base/variables';
-@import './base/functions';
-@import './base/mixins';
+@forward './base/variables';
+@forward './base/functions';
+@forward './base/mixins';
