@@ -5,10 +5,8 @@ import { Profile } from '@widgets/profile/';
 
 
 
-const HomePage: React.FunctionComponent = () => {
+export const HomePage: React.FunctionComponent = () => {
     return (<>
         <Profile />
     </>);
 }
-
-export default HomePage;

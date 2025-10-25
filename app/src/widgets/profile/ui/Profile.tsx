@@ -1,13 +1,20 @@
-import { MessageCard } from "@entities/messages/";
+import { MessageList } from "@entities/messages/";
 import { UserCard, UserCompactCard } from "@entities/user";
 
 
 const Profile = () => {
     return (<>
 
-        <UserCard />
-        <UserCompactCard />
-        <MessageCard />
+        <div>
+            <div>
+                <UserCard />
+            </div>
+            
+            <div>
+                <UserCompactCard />
+                <MessageList />
+            </div>
+        </div>
     
     </>);
 }

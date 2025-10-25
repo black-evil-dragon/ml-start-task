@@ -1,7 +1,5 @@
-import React from 'react';
 
-
-function NoPage() {
+export function NoPage() {
     return (
         <div className="page">
             <h1>
@@ -12,5 +10,3 @@ function NoPage() {
         </div>
     );
 }
-
-export default NoPage;

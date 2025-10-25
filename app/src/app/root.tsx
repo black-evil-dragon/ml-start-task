@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Routing from './router'
+import { Routing } from './router'
 
 import { Provider } from 'react-redux';
 import { store } from './store';
 
 
 
-export default function App() {
+export function App() {
     return (<>
         <React.StrictMode>
             <Provider store={store}>

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 import path from "path";
 
+const DEBUG = true // process.env.NODE_ENV
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -23,6 +24,10 @@ export default defineConfig({
       scss: {
         additionalData: `@use "@app/styles/globals.scss" as *;`
       }
+    },
+    modules: {
+      generateScopedName: DEBUG ? '[name]__[local]' : '[hash:base64:8]',
+      localsConvention: 'camelCase'
     }
   },
 

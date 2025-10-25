@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 //* App layout
-import Layout from '@app/layout';
+import { Layout } from '@app/layout';
 
 
 //* Pages
@@ -12,7 +12,7 @@ import { NoPage } from "@pages/404";
 
 
 
-function Routing() {
+export function Routing() {
     return (
         <BrowserRouter>
             <Routes>
@@ -30,6 +30,3 @@ function Routing() {
         </BrowserRouter>
     );
 }
-
-
-export default Routing;
