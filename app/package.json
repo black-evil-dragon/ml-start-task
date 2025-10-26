@@ -6,7 +6,8 @@
   "main": "src/index.tsx",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
+    "check": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
