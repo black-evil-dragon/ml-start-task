@@ -23,11 +23,11 @@ export const ItemsContainer: FC<ItemsContainerProps> = ({
 
             {/* Шапка секции */}
             <div className={styles.header}>
-                <div className={styles.headerTitle}>
+                <div className={classNames(styles.headerTitle, 'font-color', 'font-h4')}>
                     {title}
                 </div>
 
-                <div className={styles.headerText}>
+                <div className={classNames(styles.headerText)}>
                     {description}
                 </div>
             </div>
@@ -35,8 +35,6 @@ export const ItemsContainer: FC<ItemsContainerProps> = ({
 
             {/* Содержимое секции */}
             <div className={styles.container}>
-            
-                {/* <div className={styles.containerItem}>Items of content block</div> */}
 
                 {children}
             </div>

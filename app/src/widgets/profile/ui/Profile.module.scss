@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+
+    gap: calcFluid(10, 35);
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
+
+        gap: calcFluid(10, 35);
+
+
+        &__row {
+            display: flex;
+            flex-direction: row;
+
+            gap: calcFluid(10, 35);
+        }
+
+        &__column {
+            display: flex;
+            flex-direction: row;
+
+            gap: calcFluid(10, 35);
+        }
+
+
+        &-item {
+            flex: 1;
+        }
+    }
+}

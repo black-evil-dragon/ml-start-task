@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client';
 
 import { App } from '@app/root';
 
+import '@styles/base.scss';
+
 
 const container = document.getElementById('root');
 

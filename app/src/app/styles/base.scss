@@ -1,0 +1,21 @@
+@use "scss-reset/light";
+
+@use './settings/font';
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: calcFluid(14, 16);
+
+    @include theme;
+}
+
+a {
+    color: inherit;
+    @include smooth-underline {
+        color: $color-primary;
+    };
+}

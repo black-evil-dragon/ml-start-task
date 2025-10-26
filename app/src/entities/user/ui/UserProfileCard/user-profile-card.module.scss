@@ -1,0 +1,67 @@
+.wrapper {
+    width: fit-content;
+
+
+    .image {
+        aspect-ratio: 1;
+
+        object-fit: cover;
+
+        max-width: calcFluid(150, 300);
+        height: 100%;
+
+        border-radius: $border-radius;
+    }
+
+
+
+    .content {
+
+        display: flex;
+        flex-direction: column;
+
+        gap: calcFluid(5, 15);
+
+        margin-top: calcFluid(5, 5);
+
+
+        &-name {
+
+            @include font-h3;
+
+            color: $color-primary;
+
+        }
+
+        &-bio {
+            @include font-h4;
+        }
+
+        &-location {}
+
+
+        .contacts {
+            display: flex;
+            flex-direction: column;
+
+            gap: calcFluid(10, 15);
+
+            &-item {
+                display: flex;
+                align-items: center;
+
+                gap: calcFluid(5, 10);
+
+                &__icon {
+                    fill: $color-primary;
+
+                    width: calcFluid(25, 30);
+                    height: calcFluid(25, 30);
+                }
+
+                &__text {}
+            }
+        }
+
+    }
+}

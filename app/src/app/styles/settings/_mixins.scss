@@ -1,3 +1,48 @@
+@use 'sass:map';
+
+@use './variables' as *;
+@use './functions' as *;
+
+
+//* THEME
+@mixin theme($type: "page") {
+    @each $theme, $colors in $theme-colors {
+        [data-theme="#{$theme}"] & {
+            color: map.get($colors, "text");
+            background-color: map.get($colors, $type);
+        }
+    }
+}
+
+
+
+//* FONT
+@mixin font-h1 {
+    font-weight: 600;
+    font-size: calcFluid(27, 53);
+}
+
+@mixin font-h2 {
+    font-weight: 600;
+    font-size: calcFluid(24, 45);
+}
+
+@mixin font-h3 {
+    font-weight: 500;
+    font-size: calcFluid(24, 32);
+}
+
+@mixin font-h4 {
+    font-weight: 700;
+    font-size: calcFluid(14, 24);
+}
+
+@mixin font-p {
+    font-size: calcFluid(14, 16);
+}
+
+
+//* MEDIA
 @mixin _1920 {
     @media screen and (max-width: 1921px) {
         @content;
@@ -45,5 +90,35 @@
 @mixin _360 {
     @media screen and (max-width: 361px) {
         @content;
+    }
+}
+
+
+/* ___________________________________________
+* 			Вспомогательные миксины
+* _____________________________________________
+*/
+
+
+
+
+
+@mixin smooth-underline() {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size $transition-time, color $transition-time ease-in-out;
+
+
+    &:hover, &:active {
+        background-size: 100% 1px;
+
+        @content;
+    }
+
+    @include _1024 {
+        transition: background-size 0s, color $transition-time ease-in-out;
     }
 }

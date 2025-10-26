@@ -26,6 +26,7 @@ export const useTheme = () => {
 
         localStorage.removeItem('theme')
         document.documentElement.setAttribute('data-theme', newTheme);
+        setTheme(newTheme);
     }
 
     return { theme, toggleTheme, clearTheme };

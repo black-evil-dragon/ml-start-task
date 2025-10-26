@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    gap: calcFluid(5, 10);
+
+    padding: calcFluid(5, 10);
+
+    border-radius: $border-radius;
+    @include theme("page");
+}
