@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:math';
 
 @use './variables' as *;
 
@@ -7,6 +8,17 @@
     @return map.get($theme-map, $type);
 }
 
+// @function calcFluid($min-value, $max-value, $min-vw: 320px, $max-vw: 1920px) {
+//     @return calc(#{$min-value}px + (#{$max-value}px - #{$min-value}px) * (100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}));
+// }
 @function calcFluid($min-value, $max-value, $min-vw: 320px, $max-vw: 1920px) {
-    @return calc(#{$min-value}px + (#{$max-value}px - #{$min-value}px) * (100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}));
+    $k: math.div($max-value - $min-value, strip-unit($max-vw) - strip-unit($min-vw));
+    $b: $min-value - $k * strip-unit($min-vw);
+
+    @return calc(#{$k} * 100vw + #{$b}px);
+}
+
+
+@function strip-unit($value) {
+    @return math.div($value, ($value * 0 + 1));
 }

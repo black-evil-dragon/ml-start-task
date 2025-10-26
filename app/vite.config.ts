@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+
+
 import path from "path";
 
-const DEBUG = false // process.env.NODE_ENV
+const DEBUG = true // process.env.NODE_ENV
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -16,10 +18,22 @@ export default defineConfig({
       "@features": path.resolve(__dirname, "./src/features"),
       "@widgets": path.resolve(__dirname, "./src/widgets"),
       "@pages": path.resolve(__dirname, "./src/pages"),
-      
+
       "@styles": path.resolve(__dirname, "./src/app/styles"),
     },
   },
+
+
+
+  plugins: [
+    react({
+      babel: {
+        plugins: [['babel-plugin-react-compiler']],
+      },
+    }),
+  ],
+
+
 
   css: {
     preprocessorOptions: {
@@ -32,8 +46,14 @@ export default defineConfig({
     modules: {
       generateScopedName: DEBUG ? '[name]__[local]' : '[hash:base64:8]',
       localsConvention: 'camelCase'
-    }
+    },
   },
+
+  // optimizeDeps: {
+  //   include: ['autoprefixer']
+  // },
+
+
 
 
   build: {
@@ -46,16 +66,6 @@ export default defineConfig({
           vendor: ['react', 'react-dom']
         }
       }
-    }
+    },
   },
-
-  
-  plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler']],
-      },
-    }),
-  ],
-  
 })
