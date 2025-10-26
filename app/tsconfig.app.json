@@ -59,6 +59,9 @@
       ],
       "@pages/*": [
         "./src/pages/*"
+      ],
+      "@styles/*": [
+        "./src/app/styles/*"
       ]
     },
   },

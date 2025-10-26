@@ -11,7 +11,6 @@ import { HomePage } from "@pages/home";
 import { NoPage } from "@pages/404";
 
 
-
 export function Routing() {
     return (
         <BrowserRouter>

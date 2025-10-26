@@ -1,6 +1,10 @@
-@function bg-color($type, $theme: 'light') {
-    $theme-map: map-get($bg-colors, $theme);
-    @return map-get($theme-map, $type);
+@use 'sass:map';
+
+@use './variables' as *;
+
+@function theme-color($type, $theme: 'light') {
+    $theme-map: map.get($theme-colors, $theme);
+    @return map.get($theme-map, $type);
 }
 
 @function calcFluid($min-value, $max-value, $min-vw: 320px, $max-vw: 1920px) {

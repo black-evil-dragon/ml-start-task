@@ -1,19 +1,24 @@
-import { MessageList } from "@entities/messages/";
+
+import { MessageCard } from "@entities/messages";
 import { UserCard, UserCompactCard } from "@entities/user";
+// import { MessageList } from "@entities/messages/";
+
+import { ItemsContainer } from "@shared/ui/ItemsContainer";
 
 
 const Profile = () => {
     return (<>
 
         <div>
-            <div>
-                <UserCard />
-            </div>
+            <UserCard />
             
-            <div>
+            <ItemsContainer title="Последние проекты" >
+                <MessageCard />
+            </ItemsContainer>
+
+            <ItemsContainer title="Мой стек">
                 <UserCompactCard />
-                <MessageList />
-            </div>
+            </ItemsContainer>
         </div>
     
     </>);
