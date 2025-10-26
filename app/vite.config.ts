@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 
 import path from "path";
 
-const DEBUG = true // process.env.NODE_ENV
+const DEBUG = false // process.env.NODE_ENV
 
 // https://vite.dev/config/
 export default defineConfig({
