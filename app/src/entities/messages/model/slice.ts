@@ -1,34 +1,34 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+// // import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 
-const initialState = {
-    data: {
-        id: '',
-        text: '',
+// const initialState = {
+//     data: {
+//         id: '',
+//         text: '',
 
-        created_at: '',
-        updated_at: '',
-    }
-};
+//         created_at: '',
+//         updated_at: '',
+//     }
+// };
 
 
-const MessageSlice = createSlice({
-    name: 'message-content',
-    initialState,
-    reducers: {
-        set(
-            state,
-            action: PayloadAction<any>
-        ) {
+// const MessageSlice = createSlice({
+//     name: 'message-content',
+//     initialState,
+//     reducers: {
+//         // set(
+//         //     state,
+//         //     action: PayloadAction<any>
+//         // ) {
 
-        }
-    }
-});
+//         // }
+//     }
+// });
 
-export const {
+// export const {
 
-    set,
+//     // set,
 
-} = MessageSlice.actions;
+// } = MessageSlice.actions;
 
-export default MessageSlice.reducer
+// export default MessageSlice.reducer

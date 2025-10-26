@@ -67,7 +67,7 @@ export const MESSAGES = [
 ];
 
 // Мой стек
-const stack = [
+export const stack = [
   {
     title: "TS/JS",
     description: "React, Gulp, Webpack",
@@ -93,7 +93,7 @@ const stack = [
   },
 ];
 
-const wishlist = [
+export const wishlist = [
   {
     title: "Java",
     description: "Проходил практику в СберТехнологии, изучал Java",
@@ -105,7 +105,7 @@ const wishlist = [
 ];
 
 // Опыт работы, время
-const experience = [
+export const experience = [
   {
     title: "Стажер | only.digital",
     description:
