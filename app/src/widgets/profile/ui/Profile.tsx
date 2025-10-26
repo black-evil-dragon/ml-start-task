@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import { MessageCard } from "@entities/messages";
-import { UserProfileCard, UserCompactCard } from "@entities/user";
+import { UserProfileCard } from "@entities/user";
 
 
 import { ItemsContainer } from "@shared/ui/ItemsContainer";
