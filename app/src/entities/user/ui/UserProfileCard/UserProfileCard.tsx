@@ -44,18 +44,13 @@ export const UserProfileCard: FC<UserProfileCardProps> = ({
                     {location}
                 </div>
 
-                {contacts && <>
-                
-                    <div className={styles.contacts}>
-                        {Object.entries(contacts).map(([key, contactItem]) => (<>
-                            <div className={styles.contactsItem} key={key}>
-                                {<contactItem.icon className={styles.contactsItemIcon}/>}
+                {contacts && <div className={styles.contacts}>
+                    {Object.entries(contacts).map(([field, contactItem], key) => (<div className={styles.contactsItem} key={field+key}>
+                        {<contactItem.icon className={styles.contactsItemIcon} />}
 
-                                <a className={styles.contactsItemText} href={contactItem.link}>{contactItem.text}</a>
-                            </div>
-                        </>))}
-                    </div>
-                </>}
+                        <a className={styles.contactsItemText} href={contactItem.link} target='_blank'>{contactItem.text}</a>
+                    </div>))}
+                </div>}
             </div>
         </div>
     );

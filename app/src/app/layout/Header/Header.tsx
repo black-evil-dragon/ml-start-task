@@ -1,14 +1,27 @@
-import { useTheme } from "@features/theme/model/useTheme";
+import classNames from "classnames";
+
+import { ThemeSwitcher } from "@features/theme";
+
+
+import styles from "./header.module.scss";
+import stylesLayout from "@styles/modules/layout.module.scss";
+
+
 
 export function Header() {
-
-    const { theme, toggleTheme, clearTheme } = useTheme();
-
-
     return (<>
-        <header onClick={toggleTheme}>
-            HEADER {theme}
+        <header className={classNames('app-header', stylesLayout.pageContainer, styles.wrapper)}>
+            <div className={classNames(stylesLayout.section, styles.container)}>
+                <div className={styles.title}>
+                    Страница пользователя
+
+                    <ThemeSwitcher />
+                </div>
+
+                <div className={styles.text}>
+                    Добро пожаловать на сайт-визитку
+                </div>
+            </div>
         </header>
-        <div onClick={clearTheme}>clear theme</div>
     </>);
 }

@@ -1,7 +1,23 @@
-.page-container {
-    max-width: calcFluid(350, 1600);
+.page {
+    &-container {
+        max-width: calcFluid(350, 1600);
 
-    margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mxw_576 {
+            max-width: calcFluid(350, 500, $max-vw: 576px);
+
+            padding-left: calcFluid(10, 15);
+            padding-right: calcFluid(10, 15);
+        }
+    }
+}
+
+.section {
+    &-indent {
+        margin-bottom: calcFluid(30, 90);
+    }
 }
 
 

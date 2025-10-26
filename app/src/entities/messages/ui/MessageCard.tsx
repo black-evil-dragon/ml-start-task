@@ -13,6 +13,7 @@ interface MessageCardProps {
     className?: string,
 
     name: string
+    link: string
     image?: string
 
     message: string
@@ -21,6 +22,7 @@ interface MessageCardProps {
 export const MessageCard: FC<MessageCardProps> = ({
     className = '',
 
+    link,
     name,
     image,
 
@@ -35,7 +37,7 @@ export const MessageCard: FC<MessageCardProps> = ({
 
             <div className={classNames(styles.content)}>
                 <div className={styles.contentName}>
-                    {name}
+                    <a href={link} target="_blank">{name}</a>
                 </div>
                 <div className={styles.contentText}>
                     {message}

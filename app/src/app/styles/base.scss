@@ -1,6 +1,7 @@
-@use "scss-reset/light";
-
+@use './settings/reset';
 @use './settings/font';
+
+
 
 body {
     font-family: "Inter", sans-serif;
@@ -11,11 +12,26 @@ body {
     font-size: calcFluid(14, 16);
 
     @include theme;
+
+    #root {
+        min-height: 100vh;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+
+        .app {
+
+            &-content {
+                flex: 1;
+            }
+        }
+    }
 }
 
 a {
     color: inherit;
+
     @include smooth-underline {
         color: $color-primary;
-    };
+    }
 }

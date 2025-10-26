@@ -26,6 +26,6 @@
 
 
     &-color {
-        color: $color-primary;
+        @include font-color;
     }
 }

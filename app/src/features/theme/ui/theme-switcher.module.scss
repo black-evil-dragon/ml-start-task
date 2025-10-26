@@ -1,0 +1,53 @@
+.wrapper {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    $size: calcFluid(35, 50);
+    width: $size;
+    height: $size;
+
+    border-radius: 50%;
+    // @include theme-color("background-color", "element");
+
+
+    .button {
+        cursor: pointer;
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        $size: calcFluid(35, 50);
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+
+
+        transform: translate(0, 100%);
+        @include theme-color("background-color", "element");
+        transition: transform $transition-time ease-in-out,
+            background-color $transition-time ease-in-out;
+
+        svg {
+            @include theme-color("fill", "text");
+            transition: fill $transition-time ease-in-out;
+        }
+
+        &--active {
+            transform: translate(0, 0%);
+        }
+
+        &:hover,
+        &:active {
+            background-color: $color-primary;
+
+            svg {
+                fill: $color-white;
+            }
+        }
+    }
+}

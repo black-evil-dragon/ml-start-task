@@ -30,7 +30,7 @@ export const CONTACTS: Contacts = {
   },
   vk: {
     text: "Написать в VK",
-    link: "https://vk.com/blackevil_dragon",
+    link: "https://vk.com/blackevildragon",
     icon: FaVk,
   },
 };
@@ -43,22 +43,26 @@ export const CONTACTS: Contacts = {
 export const MESSAGES = [
   {
     userName: "interval-slider-task",
+    link: "https://github.com/black-evil-dragon/interval-slider-task",
     text:
-      'Тестовое задание от компании only.digital, блок "Слайдер". repo: {GITHUB_URL}/interval-slider-task',
+      'Тестовое задание от компании only.digital, блок "Слайдер". repo: https://github.com/black-evil-dragon/interval-slider-task',
   },
   {
     userName: "duckling-bot",
+    link: "https://github.com/black-evil-dragon/duckling-bot",
     text:
-      "Бот для Telegram для студентов ВоГУ для выдачи расписания и ее рассылки. repo: {GITHUB_URL}/duckling-bot",
+      "Бот для Telegram для студентов ВоГУ для выдачи расписания и ее рассылки. repo: https://github.com/black-evil-dragon/duckling-bot",
   },
   {
     userName: "neuro-veil",
+    link: "https://github.com/black-evil-dragon/neuro-veil",
     text:
-      "LSTM-модель для предсказания цен активов на фондовом рынке, интеграция TinkoffInvest API. repo: {GITHUB_URL}/neuro-veil",
+      "LSTM-модель для предсказания цен активов на фондовом рынке, интеграция TinkoffInvest API. repo: https://github.com/black-evil-dragon/neuro-veil",
   },
   {
     userName: "Other repositories",
-    text: "Также вы можете посетить мой GitHub: {GITHUB_URL}",
+    link: "https://github.com/black-evil-dragon",
+    text: "Также вы можете посетить мой GitHub: https://github.com/black-evil-dragon",
   },
 ];
 

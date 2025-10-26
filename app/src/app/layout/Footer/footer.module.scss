@@ -1,0 +1,12 @@
+.wrapper {
+    padding: calcFluid(20, 40) 0;
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: calcFluid(2, 5);
+
+        @include theme-text-color(.5);
+    }
+}

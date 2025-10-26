@@ -10,6 +10,7 @@ import MyImage from '@shared/images/me.jpg'
 
 
 import stylesLayout from '@styles/modules/layout.module.scss'
+import stylesItemsContainer from '@shared/ui/items-container.module.scss';
 import styles from './profile.module.scss'
 
 
@@ -38,9 +39,10 @@ const Profile = () => {
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
                     {MESSAGES.map((message, key) => (<MessageCard
-                        // className={styles.c}
+                        className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem2)}
                         name={message.userName}
                         message={previewText(message.text, 50)}
+                        link={message.link}
 
                         key={key}
                     />))}
@@ -52,20 +54,18 @@ const Profile = () => {
                     title="Мой стек"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
-                    <UserCompactCard />
-                    <UserCompactCard />
-                    <UserCompactCard />
-                    <UserCompactCard />
+                    <div>Python, Django</div>
+                    <div>TS, React, Gulp</div>
+                    <div>Docker</div>
                 </ItemsContainer>
 
                 <ItemsContainer
                     title="Опыт работы"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
-                    <UserCompactCard />
-                    <UserCompactCard />
-                    <UserCompactCard />
-                    <UserCompactCard />
+                    <div>Стажировка - <a href="https://only.digital/" target="_blank">Only.digital</a></div>
+                    <div>Django-разработчик - <a href="https://place-start.ru/" target="_blank">PLACESTART</a> с 2023 года</div>
+                    <div>Практикант - <a href="https://sbertech.ru/" target="_blank">СберТех</a> на 2 курсе</div>
                 </ItemsContainer>
             </div>
         </div>

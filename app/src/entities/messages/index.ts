@@ -1,3 +1,7 @@
+//* UI
 export { MessageCard } from './ui/MessageCard'
-export { MessageContent } from './ui/MessageContent'
-export { MessageList } from './ui/MessageList'
+
+
+//* Store
+export { default as MessageReduser } from './model/slice'
+export * as MessageManager from './model/slice'

@@ -7,6 +7,7 @@ import classNames from 'classnames';
 
 interface ItemsContainerProps {
     className?: string;
+    columns?: number;
 
     title: string;
     description?: string;

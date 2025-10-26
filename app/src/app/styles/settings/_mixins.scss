@@ -14,6 +14,21 @@
     }
 }
 
+// Если честно, я офигел, что так можно, прикольно
+@mixin theme-text-color($alpha: 1.0) {
+    @each $theme, $colors in $theme-colors {
+        [data-theme="#{$theme}"] & {
+            color: rgba($color: theme-color("text", $theme), $alpha: $alpha);
+        }
+    }
+}
+@mixin theme-color($property, $type: 'text', $alpha: 1.0) {
+    @each $theme, $colors in $theme-colors {
+        [data-theme="#{$theme}"] & {
+            #{$property}: rgba($color: theme-color($type, $theme), $alpha: $alpha);
+        }
+    }
+}
 
 
 //* FONT
@@ -41,53 +56,65 @@
     font-size: calcFluid(14, 16);
 }
 
+@mixin font-big {
+    font-size: calcFluid(16, 18);
+}
+
+@mixin font-small {
+    font-size: calcFluid(12, 14);
+}
+
+@mixin font-color {
+    color: $color-primary;
+}
+
 
 //* MEDIA
-@mixin _1920 {
+@mixin mxw_1920 {
     @media screen and (max-width: 1921px) {
         @content;
     }
 }
 
-@mixin _1440 {
+@mixin mxw_1440 {
     @media screen and (max-width: 1441px) {
         @content;
     }
 }
 
-@mixin _1280 {
+@mixin mxw_1280 {
     @media screen and (max-width: 1280px) {
         @content;
     }
 }
 
 
-@mixin _1080 {
+@mixin mxw_1080 {
     @media screen and (max-width: 1081px) {
         @content;
     }
 }
 
-@mixin _1024 {
+@mixin mxw_1024 {
     @media screen and (max-width: 1025px) {
         @content;
     }
 }
 
 
-@mixin _576 {
+@mixin mxw_576 {
     @media screen and (max-width: 577px) {
         @content;
     }
 }
 
-@mixin _425 {
+@mixin mxw_425 {
     @media screen and (max-width: 426px) {
         @content;
     }
 }
 
-@mixin _360 {
+@mixin mxw_360 {
     @media screen and (max-width: 361px) {
         @content;
     }
@@ -112,13 +139,14 @@
     transition: background-size $transition-time, color $transition-time ease-in-out;
 
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         background-size: 100% 1px;
 
         @content;
     }
 
-    @include _1024 {
+    @include mxw_1024 {
         transition: background-size 0s, color $transition-time ease-in-out;
     }
 }

@@ -3,6 +3,10 @@
 
     gap: calcFluid(10, 35);
 
+    @include mxw_1024 {
+        flex-direction: column;
+    }
+
 
     .content {
         display: flex;
@@ -18,6 +22,10 @@
             flex-direction: row;
 
             gap: calcFluid(10, 35);
+
+            @include mxw_1024 {
+                flex-direction: column;
+            }
         }
 
         &__column {

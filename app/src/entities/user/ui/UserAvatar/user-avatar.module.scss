@@ -1,6 +1,24 @@
 .wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: start;
 
+    max-width: calcFluid(80, 90);
 
-    
+    padding: calcFluid(0, 5);
+
+    .image {
+        aspect-ratio: 1;
+        object-fit: cover;
+
+        width: 100%;
+        height: 100%;
+
+        max-width: calcFluid(80, 90);
+        max-height: calcFluid(80, 90);
+
+        background-color: #fff;
+        border-radius: $border-radius;
+    }
 
 }

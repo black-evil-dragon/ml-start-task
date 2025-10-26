@@ -10,7 +10,9 @@ export function Layout() {
         <Header />
 
         {/* App content */}
-        <Outlet />
+        <div className="app-content">
+            <Outlet />
+        </div>
 
         {/* App footer component */}
         <Footer />

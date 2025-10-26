@@ -1,6 +1,19 @@
 .wrapper {
     width: fit-content;
 
+    @include mxw_1024 {
+        width: 100%;
+
+        flex-direction: row;
+        align-items: center;
+
+        gap: calcFluid(35, 45);
+
+        @include mxw_576 {
+            flex-direction: column;
+        }
+    }
+
 
     .image {
         aspect-ratio: 1;

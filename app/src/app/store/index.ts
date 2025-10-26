@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 
+import { ChatReduser } from '@entities/chat';
+
+
+
 export const store = configureStore({
     reducer: {
+        chat: ChatReduser
     },
 });
 
