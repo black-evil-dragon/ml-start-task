@@ -23,7 +23,7 @@ const Profile = () => {
         <UserProfileCard
             image={MyImage}
             name="Семён Голган"
-            bio="Fullstack-разработчки"
+            bio="Fullstack-разработчик"
 
             location="г. Вологда"
 
