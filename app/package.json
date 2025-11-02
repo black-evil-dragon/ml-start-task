@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "main": "src/index.tsx",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "check": "tsc -b && vite build",
+    "check": "tsc -b",
     "lint": "eslint .",
     "preview": "vite build && vite preview"
   },

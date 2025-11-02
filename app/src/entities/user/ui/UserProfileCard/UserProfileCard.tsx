@@ -30,7 +30,7 @@ export const UserProfileCard: FC<UserProfileCardProps> = ({
 }) => {
     return (
         <div className={classNames(styles.wrapper, layoutStyles.wrapper)}>
-            {image ? <img src={image} alt="" className={styles.image} /> : <div className={styles.imagePlaceholder} />}
+            {image ? <img src={image} alt={name} className={styles.image} /> : <div className={styles.imagePlaceholder} />}
 
             <div className={styles.content}>
                 <div className={styles.contentName}>

@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 
 import path from "path";
 
-const DEBUG = false // process.env.NODE_ENV
+const DEBUG = process.env.NODE_ENV == 'development';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -48,12 +48,6 @@ export default defineConfig({
       localsConvention: 'camelCase'
     },
   },
-
-  // optimizeDeps: {
-  //   include: ['autoprefixer']
-  // },
-
-
 
 
   build: {

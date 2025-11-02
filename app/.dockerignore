@@ -1,0 +1,17 @@
+node_modules
+coverage
+dist
+build
+
+.git
+.env
+.nyc_output
+.dist
+.npm
+.cache
+logs
+.DS_Store
+
+*.log
+.gitignore
+README.md
