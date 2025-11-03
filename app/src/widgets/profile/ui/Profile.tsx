@@ -1,11 +1,11 @@
 import classNames from "classnames";
 
 import { MessageCard } from "@entities/messages";
-import { UserProfileCard } from "@entities/user";
+import { UserCard, UserProfileCard } from "@entities/user";
 
 
 import { ItemsContainer } from "@shared/ui/ItemsContainer";
-import { CONTACTS } from '@shared/data/data'
+import { CONTACTS, EXPREIENCE } from '@shared/data/data'
 import MyImage from '@shared/images/me.jpg'
 
 
@@ -51,6 +51,24 @@ const Profile = () => {
 
             <div className={styles.contentRow}>
                 <ItemsContainer
+                    title="Опыт работы"
+                    className={classNames(stylesLayout.wrapper, styles.contentItem)}
+                >
+                    {EXPREIENCE.map((job, key) => (<UserCard
+                        className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem1)}
+                        name={job.title}
+                        bio={job.bio + ' | ' + job.date.start + (job.date.end ? ' - ' + job.date.end : '')}
+                        url={job.url}
+                        image={`/src/shared/images/${job.image}`}
+
+                        key={key}
+                    />))}
+                    {/* <div>Стажировка - <a href="https://only.digital/" target="_blank">Only.digital</a></div>
+                    <div>Django-разработчик - <a href="https://place-start.ru/" target="_blank">PLACESTART</a> с 2023 года</div>
+                    <div>Практикант - <a href="https://sbertech.ru/" target="_blank">СберТех</a> на 2 курсе</div> */}
+                </ItemsContainer>
+
+                <ItemsContainer
                     title="Мой стек"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
@@ -59,14 +77,7 @@ const Profile = () => {
                     <div>Docker</div>
                 </ItemsContainer>
 
-                <ItemsContainer
-                    title="Опыт работы"
-                    className={classNames(stylesLayout.wrapper, styles.contentItem)}
-                >
-                    <div>Стажировка - <a href="https://only.digital/" target="_blank">Only.digital</a></div>
-                    <div>Django-разработчик - <a href="https://place-start.ru/" target="_blank">PLACESTART</a> с 2023 года</div>
-                    <div>Практикант - <a href="https://sbertech.ru/" target="_blank">СберТех</a> на 2 курсе</div>
-                </ItemsContainer>
+
             </div>
         </div>
 

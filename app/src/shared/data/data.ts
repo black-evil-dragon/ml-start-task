@@ -66,6 +66,55 @@ export const MESSAGES = [
   },
 ];
 
+
+
+
+
+//* Опыт работы
+export const EXPREIENCE = [
+  {
+    title: "Only",
+    bio: "Стажер Frontend | Next, TS",
+    url: "https://only.digital/",
+    description: "Познакомился с React, scss, typescript, с продуктом компании и методологией БЭМ",
+
+    image: "only.png",
+    
+    date: {
+      start: "Август 2022",
+      // end: "Август 2022"
+    },
+  },
+
+  {
+    title: "PLACESTART",
+    bio: "Django-разработчик | Python, Django",
+    url: "https://only.digital/",
+    description: "",
+
+    image: "placestart.png",
+
+    date: {
+      start: "Август 2023",
+      end: "По текущее время",
+    },
+  },
+  {
+    title: "СберТехнологии",
+    bio: "Практика | 2 курс",
+    url: "https://sbertech.ru/",
+    description: "Летняя практика в СберТех'е, знакомство с Java",
+
+    image: "sbertech.jpeg",
+  
+    date: {
+      start: "Июль 2025",
+      end: "Август 2025",
+    },
+  },
+];
+
+
 // Мой стек
 export const stack = [
   {
@@ -104,34 +153,3 @@ export const wishlist = [
   },
 ];
 
-// Опыт работы, время
-export const experience = [
-  {
-    title: "Стажер | only.digital",
-    description:
-      "Познакомился с React, scss, typescript, с продуктом компании и методологией БЭМ",
-    date: {
-      start: "Август 2022",
-      // end: "Август 2022"
-    },
-  },
-
-  {
-    title: "Django-разработчик | PlaceStart",
-    description: "",
-
-    date: {
-      start: "Август 2023",
-      end: "По текущее время",
-    },
-  },
-  {
-    title: "Практика | СберТехнологии",
-    description: "Летняя практика в СберТех'е, знакомство с Java",
-
-    date: {
-      start: "Июль 2025",
-      end: "Август 2025",
-    },
-  },
-];

@@ -1,12 +1,8 @@
-.wrapper {
-    
-}
+.wrapper {}
 
 .header {
 
-    &-title {
-
-    }
+    &-title {}
 
     &-text {}
 
@@ -20,6 +16,10 @@
     gap: calcFluid(10, 15);
 
     &-item {
+
+        &--1 {
+            flex: 1 0 100%;
+        }
 
         &--2 {
             flex: 1 0 47%;

@@ -1,6 +1,25 @@
 version: "3.9"
 
+networks:
+  build_network:
+
 services:
+
+  nginx:
+    image: nginx:stable-alpine
+
+    networks:
+      - build_network
+
+    ports:
+      - "80:80"
+  
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+  
+    depends_on:
+      - app-build
+
   app-dev:
     container_name: app-dev
 
@@ -27,8 +46,8 @@ services:
       dockerfile: Dockerfile
       target: production
 
-    ports:
-      - "80:80"
+    networks:
+      - build_network
 
     environment:
       NODE_ENV: production

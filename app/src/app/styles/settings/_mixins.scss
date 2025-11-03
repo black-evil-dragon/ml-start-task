@@ -22,6 +22,7 @@
         }
     }
 }
+
 @mixin theme-color($property, $type: 'text', $alpha: 1.0) {
     @each $theme, $colors in $theme-colors {
         [data-theme="#{$theme}"] & {
@@ -141,9 +142,11 @@
 
     &:hover,
     &:active {
-        background-size: 100% 1px;
+        &:not(.font--no-underline) {
+            background-size: 100% 1px;
 
-        @content;
+            @content;
+        }
     }
 
     @include mxw_1024 {

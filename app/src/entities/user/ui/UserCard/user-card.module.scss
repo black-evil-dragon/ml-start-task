@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    gap: calcFluid(5, 10);
+
+
+    padding: calcFluid(5, 10);
+
+    border-radius: $border-radius;
+    @include theme("page");
+
+
+
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: calcFluid(2, 5);
+        max-width: 85%;
+
+        @include mxw_1024 {
+            max-width: 65%;
+
+            @include mxw_576 {
+                max-width: 50%;
+            }
+        }
+
+        &-name {
+            @include font-big;
+        }
+
+        &-text {
+            @include font-small;
+            @include theme-text-color(.5);
+        }
+    }
+}
