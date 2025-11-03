@@ -1,33 +1,51 @@
-// import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 
-// const initialState = {
-//     data: {
-//         id: '',
+export interface Message {
+    id: string;
+    text: string;
+    userId: string;
+    timestamp: string;
+    isRead: boolean;
+}
 
-//         created_at: '',
-//         updated_at: '',
-//     }
-// };
+export interface ChatState {
+    messages: Message[];
 
+    activeChatId: string | null;
+    loading: boolean;
+    error: string | null;
+}
 
-// const ChatSlice = createSlice({
-//     name: 'chat-content',
-//     initialState,
-//     reducers: {
-//         set(
-//             state,
-//             action: PayloadAction<any>
-//         ) {
+const initialState: ChatState = {
+    messages: [],
 
-//         }
-//     }
-// });
+    activeChatId: null,
+    loading: false,
+    error: null,
+};
 
-// export const {
+const chatSlice = createSlice({
+    name: 'chat',
+    initialState,
+    reducers: {
+        setActiveChat: (state, action: PayloadAction<string | null>) => {
+            state.activeChatId = action.payload;
+        },
 
-//     set,
+        setLoading: (state, action: PayloadAction<boolean>) => {
+            state.loading = action.payload;
+        },
 
-// } = ChatSlice.actions;
+        setError: (state, action: PayloadAction<string | null>) => {
+            state.error = action.payload;
+        },
 
-// export default ChatSlice.reducer
+        loadMessages: (state, action: PayloadAction<Message[]>) => {
+            state.messages = action.payload;
+        }
+    }
+});
+
+export const chatAction = chatSlice.actions;
+export const chatReducer = chatSlice.reducer

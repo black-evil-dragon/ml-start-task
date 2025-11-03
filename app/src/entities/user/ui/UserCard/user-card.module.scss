@@ -1,16 +1,25 @@
 .wrapper {
+    cursor: pointer;
+
     display: flex;
     gap: calcFluid(5, 10);
-
 
     padding: calcFluid(5, 10);
 
     border-radius: $border-radius;
-    @include theme("page");
+
+    @include theme-color("color", "text");
+    @include theme-color("background-color", "page");
+
+    transform: scale(1);
+    transition: transform $transition-time ease-in-out, background-color $transition-time ease-in-out;
 
 
+    &:hover {
+        transform: scale(.985);
 
-
+        @include theme-color("background-color", "page", .65);
+    }
 
     .content {
         display: flex;

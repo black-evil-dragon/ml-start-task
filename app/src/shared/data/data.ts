@@ -3,6 +3,12 @@ import type { Contacts } from '../types'
 import { AiOutlineGithub, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { FaTelegramPlane, FaVk } from "react-icons/fa";
 
+// Images
+
+import onlyLogo from '../images/only.png'
+import placestartLogo from '../images/placestart.png'
+import sbertechLogo from '../images/sbertech.jpeg'
+
 //*  Контакты ______________________________________________________________________
 
 
@@ -44,8 +50,7 @@ export const MESSAGES = [
   {
     userName: "interval-slider-task",
     link: "https://github.com/black-evil-dragon/interval-slider-task",
-    text:
-      'Тестовое задание от компании only.digital, блок "Слайдер". repo: https://github.com/black-evil-dragon/interval-slider-task',
+    text: 'Тестовое задание от компании only.digital, блок "Слайдер". repo: https://github.com/black-evil-dragon/interval-slider-task',
   },
   {
     userName: "duckling-bot",
@@ -78,8 +83,8 @@ export const EXPREIENCE = [
     url: "https://only.digital/",
     description: "Познакомился с React, scss, typescript, с продуктом компании и методологией БЭМ",
 
-    image: "only.png",
-    
+    image: onlyLogo,
+
     date: {
       start: "Август 2022",
       // end: "Август 2022"
@@ -89,10 +94,10 @@ export const EXPREIENCE = [
   {
     title: "PLACESTART",
     bio: "Django-разработчик | Python, Django",
-    url: "https://only.digital/",
+    url: "https://place-start.ru/",
     description: "",
 
-    image: "placestart.png",
+    image: placestartLogo,
 
     date: {
       start: "Август 2023",
@@ -105,8 +110,8 @@ export const EXPREIENCE = [
     url: "https://sbertech.ru/",
     description: "Летняя практика в СберТех'е, знакомство с Java",
 
-    image: "sbertech.jpeg",
-  
+    image: sbertechLogo,
+
     date: {
       start: "Июль 2025",
       end: "Август 2025",

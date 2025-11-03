@@ -16,7 +16,9 @@ interface UserCardProps {
     url: string
     image?: string
 
-    bio?: string
+    subText?: string,
+
+    onClick?: () => void,
 }
 
 
@@ -27,22 +29,25 @@ export const UserCard: FC<UserCardProps> = ({
     name,
     image,
 
-    bio,
+    subText,
+
+    onClick
 
 }) => {
-    return (<div className={classNames(styles.wrapper, className)}>
+    return (<div className={classNames(styles.wrapper, className)} onClick={onClick}>
         <UserAvatar
             name={name}
             url={url}
             image={image}
+            onClick={onClick}
         />
 
         <div className={classNames(styles.content)}>
             <div className={styles.contentName}>
-                <a href={url} target="_blank">{name}</a>
+                {name}
             </div>
             <div className={styles.contentText}>
-                {bio}
+                {subText}
             </div>
         </div>
     </div>);

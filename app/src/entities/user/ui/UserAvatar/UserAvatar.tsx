@@ -9,6 +9,8 @@ interface UserAvatarProps {
 
     image?: string;
     isActive?: boolean;
+
+    onClick?: () => void;
 }
 
 export const UserAvatar: FC<UserAvatarProps> = ({
@@ -16,14 +18,16 @@ export const UserAvatar: FC<UserAvatarProps> = ({
     url,
 
     image,
-    isActive
+    isActive,
+
+    onClick
 }) => {
     return (
-        <div className={classNames(styles.wrapper)}>
+        <div className={classNames(styles.wrapper)} onClick={onClick}>
             <a href={url} className={classNames('font--no-underline')}>
                 {image ?
                     <img src={image} alt={name} className={styles.image} />
-                    : <div className={styles.image}></div>
+                    : <div className={classNames(styles.image, styles.imagePlaceholder)}></div>
                 }
             </a>
 

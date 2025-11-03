@@ -3,9 +3,13 @@
 
     .links {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
 
         gap: calcFluid(2, 5);
+
+        text-align: center;
 
         @include theme-text-color(.5);
     }

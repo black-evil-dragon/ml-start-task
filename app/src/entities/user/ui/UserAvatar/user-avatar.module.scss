@@ -8,12 +8,16 @@
     .image {
         aspect-ratio: 1;
         object-fit: cover;
+        object-position: center;
 
         width: calcFluid(30, 50);
         height: calcFluid(30, 50);
 
-        background-color: #fff;
         border-radius: $border-radius;
+
+        &-placeholder {
+            background-color: #fff;
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { MessageCard } from "@entities/messages";
+// import { MessageCard } from "@entities/messages";
 import { UserCard, UserProfileCard } from "@entities/user";
 
 
@@ -18,6 +18,13 @@ import { MESSAGES } from "@shared/data/data";
 import { previewText } from "@shared/libs/previewText";
 
 const Profile = () => {
+
+
+    const openUrl = (url: string) => {
+        window.open(url, "_blank")
+    }
+
+
     return (<div className={classNames(stylesLayout.pageContainer, styles.wrapper)}>
 
         <UserProfileCard
@@ -30,7 +37,7 @@ const Profile = () => {
             contacts={CONTACTS}
         />
 
-        
+
 
         <div className={styles.content}>
             <div className={styles.contentRow}>
@@ -38,11 +45,11 @@ const Profile = () => {
                     title="Последние проекты"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
-                    {MESSAGES.map((message, key) => (<MessageCard
+                    {MESSAGES.map((message, key) => (<UserCard
                         className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem2)}
                         name={message.userName}
-                        message={previewText(message.text, 50)}
-                        link={message.link}
+                        subText={previewText(message.text, 50)}
+                        url={message.link}
 
                         key={key}
                     />))}
@@ -57,9 +64,10 @@ const Profile = () => {
                     {EXPREIENCE.map((job, key) => (<UserCard
                         className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem1)}
                         name={job.title}
-                        bio={job.bio + ' | ' + job.date.start + (job.date.end ? ' - ' + job.date.end : '')}
+                        subText={job.bio + ' | ' + job.date.start + (job.date.end ? ' - ' + job.date.end : '')}
                         url={job.url}
-                        image={`/src/shared/images/${job.image}`}
+                        image={job.image}
+                        onClick={() => { openUrl(job.url) }}
 
                         key={key}
                     />))}
@@ -69,12 +77,16 @@ const Profile = () => {
                 </ItemsContainer>
 
                 <ItemsContainer
-                    title="Мой стек"
+                    title="Обо мне"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
-                    <div>Python, Django</div>
-                    <div>TS, React, Gulp</div>
-                    <div>Docker</div>
+                    <p>
+                        Я занимаюсь Fullstack-разработкой более 2 лет. Мой опыт включает разработку веб-приложений и поддержку существующих систем, что позволяет мне эффективно решать задачи как на стороне клиента, так и на стороне сервера.
+                    </p>
+
+                    <p>
+                        Меня привлекает Fullstack-разработка, поскольку она позволяет охватывать весь цикл создания приложения от проектирования инфраструктуры до пользовательского интерфейса. Мне особенно интересно участвовать в проектах, где можно глубоко погружаться как в backend, так и в frontend, создавая оптимизированные образы, настраивая: серверную логику и одновременно разрабатывая интуитивно понятные интерфейсы. Особенно приятно видеть, как идея превращается в полноценное решение, работающее от начала до конца.
+                    </p>
                 </ItemsContainer>
 
 
