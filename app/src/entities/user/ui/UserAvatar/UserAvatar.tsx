@@ -4,6 +4,8 @@ import styles from './user-avatar.module.scss';
 import type { FC } from "react";
 
 interface UserAvatarProps {
+    className?: string;
+
     name: string;
     url?: string;
 
