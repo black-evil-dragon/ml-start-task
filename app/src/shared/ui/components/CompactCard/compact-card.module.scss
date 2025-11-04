@@ -31,11 +31,11 @@
             max-width: 65%;
 
             @include mxw_576 {
-                max-width: 50%;
+                max-width: 80%;
             }
         }
 
-        &-name {
+        &-title {
             @include font-big;
         }
 

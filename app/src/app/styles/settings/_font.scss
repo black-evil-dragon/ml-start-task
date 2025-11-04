@@ -24,8 +24,24 @@
         @include font-h4;
     }
 
+    &-link {
+        color: inherit;
+
+        @include smooth-underline {
+            color: $color-primary;
+        }
+    }
+
 
     &-color {
         @include font-color;
+    }
+}
+
+a {
+    color: inherit;
+
+    @include smooth-underline {
+        color: $color-primary;
     }
 }

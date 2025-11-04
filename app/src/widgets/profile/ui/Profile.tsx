@@ -1,29 +1,36 @@
 import classNames from "classnames";
+// import { useDispatch, useSelector } from "react-redux";
 
-// import { MessageCard } from "@entities/messages";
-import { UserCard, UserProfileCard } from "@entities/user";
+import { UserProfileCard } from "@entities/user";
+
+// import { useChat } from "@features/toggle-chat";
 
 
-import { ItemsContainer } from "@shared/ui/ItemsContainer";
-import { CONTACTS, EXPREIENCE } from '@shared/data/data'
+//* Shared
+// import { previewText } from "@shared/libs/previewText";
+import { CompactCard } from "@shared/ui/components";
+import { ItemsContainer, stylesItemsContainer } from "@shared/ui/layout/";
+
+import { CHATS, CONTACTS, EXPREIENCE } from '@shared/data/data'
+
 import MyImage from '@shared/images/me.jpg'
 
 
+
+//* Component
 import stylesLayout from '@styles/modules/layout.module.scss'
-import stylesItemsContainer from '@shared/ui/items-container.module.scss';
 import styles from './profile.module.scss'
+import { useChat } from "@entities/chat/model/useChat";
 
 
-import { MESSAGES } from "@shared/data/data";
-import { previewText } from "@shared/libs/previewText";
 
 const Profile = () => {
 
+    const { openChat } = useChat()
 
     const openUrl = (url: string) => {
         window.open(url, "_blank")
     }
-
 
     return (<div className={classNames(stylesLayout.pageContainer, styles.wrapper)}>
 
@@ -45,11 +52,13 @@ const Profile = () => {
                     title="Последние проекты"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
-                    {MESSAGES.map((message, key) => (<UserCard
+                    {CHATS.map((chat, key) => (<CompactCard
                         className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem2)}
-                        name={message.userName}
-                        subText={previewText(message.text, 50)}
-                        url={message.link}
+                        title={chat.name}
+                        subText={""}
+                        url={""}
+
+                        onClick={() => openChat(chat.id)}
 
                         key={key}
                     />))}
@@ -61,9 +70,9 @@ const Profile = () => {
                     title="Опыт работы"
                     className={classNames(stylesLayout.wrapper, styles.contentItem)}
                 >
-                    {EXPREIENCE.map((job, key) => (<UserCard
+                    {EXPREIENCE.map((job, key) => (<CompactCard
                         className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem1)}
-                        name={job.title}
+                        title={job.title}
                         subText={job.bio + ' | ' + job.date.start + (job.date.end ? ' - ' + job.date.end : '')}
                         url={job.url}
                         image={job.image}
@@ -71,10 +80,8 @@ const Profile = () => {
 
                         key={key}
                     />))}
-                    {/* <div>Стажировка - <a href="https://only.digital/" target="_blank">Only.digital</a></div>
-                    <div>Django-разработчик - <a href="https://place-start.ru/" target="_blank">PLACESTART</a> с 2023 года</div>
-                    <div>Практикант - <a href="https://sbertech.ru/" target="_blank">СберТех</a> на 2 курсе</div> */}
                 </ItemsContainer>
+
 
                 <ItemsContainer
                     title="Обо мне"
@@ -85,8 +92,10 @@ const Profile = () => {
                     </p>
 
                     <p>
-                        Меня привлекает Fullstack-разработка, поскольку она позволяет охватывать весь цикл создания приложения от проектирования инфраструктуры до пользовательского интерфейса. Мне особенно интересно участвовать в проектах, где можно глубоко погружаться как в backend, так и в frontend, создавая оптимизированные образы, настраивая: серверную логику и одновременно разрабатывая интуитивно понятные интерфейсы. Особенно приятно видеть, как идея превращается в полноценное решение, работающее от начала до конца.
+                        Меня привлекает Fullstack-разработка, поскольку она позволяет охватывать весь цикл создания приложения от проектирования инфраструктуры до пользовательского интерфейса. Мне особенно интересно участвовать в проектах, где можно глубоко погружаться как в backend, так и в frontend, создавая оптимизированные образы, настраивая: серверную логику и одновременно разрабатывая интуитивно понятные интерфейсы.
                     </p>
+
+                    <p>Особенно приятно видеть, как идея превращается в полноценное решение, работающее от начала до конца.</p>
                 </ItemsContainer>
 
 

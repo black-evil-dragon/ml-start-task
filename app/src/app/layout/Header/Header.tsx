@@ -12,8 +12,8 @@ export function Header() {
     return (<>
         <header className={classNames('app-header', stylesLayout.pageContainer, styles.wrapper)}>
             <div className={classNames(stylesLayout.section, styles.container)}>
-                <div className={styles.title}>
-                    Страница пользователя
+                <div className={styles.header}>
+                    <div className={styles.headerTitle}>Страница пользователя</div>
 
                     <ThemeSwitcher />
                 </div>

@@ -6,14 +6,15 @@ import classNames from "classnames";
 import { UserAvatar } from "@entities/user";
 
 
-import styles from './user-card.module.scss'
+import styles from './compact-card.module.scss'
 
 
-interface UserCardProps {
+interface CompactCardProps {
     className?: string,
 
-    name: string
-    url: string
+    title: string
+
+    url?: string
     image?: string
 
     subText?: string,
@@ -22,11 +23,11 @@ interface UserCardProps {
 }
 
 
-export const UserCard: FC<UserCardProps> = ({
+export const CompactCard: FC<CompactCardProps> = ({
     className = '',
 
     url,
-    name,
+    title,
     image,
 
     subText,
@@ -36,7 +37,7 @@ export const UserCard: FC<UserCardProps> = ({
 }) => {
     return (<div className={classNames(styles.wrapper, className)} onClick={onClick}>
         <UserAvatar
-            name={name}
+            name={title}
             url={url}
             image={image}
             onClick={onClick}
@@ -44,7 +45,7 @@ export const UserCard: FC<UserCardProps> = ({
 
         <div className={classNames(styles.content)}>
             <div className={styles.contentName}>
-                {name}
+                {title}
             </div>
             <div className={styles.contentText}>
                 {subText}

@@ -1,36 +1,29 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
+import type { Chat, Message } from '../types';
+import { CHATS } from '@shared/data/data';
 
-export interface Message {
-    id: string;
-    text: string;
-    userId: string;
-    timestamp: string;
-    isRead: boolean;
-}
 
-export interface ChatState {
-    messages: Message[];
 
-    activeChatId: string | null;
-    loading: boolean;
-    error: string | null;
-}
+const initialState: Chat = {
+    id: "",
+    name: "",
 
-const initialState: ChatState = {
-    messages: [],
-
-    activeChatId: null,
     loading: false,
-    error: null,
+    error: null as string | null,
+
+    messages: [] as Message[]
 };
 
 const chatSlice = createSlice({
     name: 'chat',
     initialState,
     reducers: {
-        setActiveChat: (state, action: PayloadAction<string | null>) => {
-            state.activeChatId = action.payload;
+        setActiveChat: (state, action: PayloadAction<Chat>) => {
+            state = {
+                ...action.payload
+            }
+            
         },
 
         setLoading: (state, action: PayloadAction<boolean>) => {
@@ -47,5 +40,5 @@ const chatSlice = createSlice({
     }
 });
 
-export const chatAction = chatSlice.actions;
+export const chatActions = chatSlice.actions;
 export const chatReducer = chatSlice.reducer

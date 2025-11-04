@@ -46,29 +46,66 @@ export const CONTACTS: Contacts = {
 
 
 //* Персональные проекты, коммерческие не включал _____________________________
-export const MESSAGES = [
+export const CHATS = [
   {
-    userName: "interval-slider-task",
-    link: "https://github.com/black-evil-dragon/interval-slider-task",
-    text: 'Тестовое задание от компании only.digital, блок "Слайдер". repo: https://github.com/black-evil-dragon/interval-slider-task',
+    id: "interval-slider-task",
+    name: "Interval Slider Task",
+    messages: [
+      {
+        id: "1",
+        text: "Тестовое задание от компании only.digital, блок 'Слайдер'",
+        senderId: "system"
+      },
+      {
+        id: "2",
+        text: "Repo: https://github.com/black-evil-dragon/interval-slider-task",
+        senderId: "system"
+      }
+    ]
   },
   {
-    userName: "duckling-bot",
-    link: "https://github.com/black-evil-dragon/duckling-bot",
-    text:
-      "Бот для Telegram для студентов ВоГУ для выдачи расписания и ее рассылки. repo: https://github.com/black-evil-dragon/duckling-bot",
+    id: "duckling-bot",
+    name: "Duckling Bot",
+    messages: [
+      {
+        id: "1",
+        text: "Бот для Telegram для студентов ВоГУ для выдачи расписания и ее рассылки",
+        senderId: "system"
+      },
+      {
+        id: "2",
+        text: "Repo: https://github.com/black-evil-dragon/duckling-bot",
+        senderId: "system"
+      }
+    ]
   },
   {
-    userName: "neuro-veil",
-    link: "https://github.com/black-evil-dragon/neuro-veil",
-    text:
-      "LSTM-модель для предсказания цен активов на фондовом рынке, интеграция TinkoffInvest API. repo: https://github.com/black-evil-dragon/neuro-veil",
+    id: "neuro-veil",
+    name: "Neuro Veil",
+    messages: [
+      {
+        id: "1",
+        text: "LSTM-модель для предсказания цен активов на фондовом рынке, интеграция TinkoffInvest API",
+        senderId: "system"
+      },
+      {
+        id: "2",
+        text: "Repo: https://github.com/black-evil-dragon/neuro-veil",
+        senderId: "system"
+      }
+    ]
   },
   {
-    userName: "Other repositories",
-    link: "https://github.com/black-evil-dragon",
-    text: "Также вы можете посетить мой GitHub: https://github.com/black-evil-dragon",
-  },
+    id: "other-repos",
+    name: "Other Repositories",
+    messages: [
+      {
+        id: "1",
+        text: "Также вы можете посетить мой GitHub: https://github.com/black-evil-dragon",
+        senderId: "system"
+      }
+    ]
+  }
 ];
 
 

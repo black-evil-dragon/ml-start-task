@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import { Profile } from '@widgets/profile/';
-import { ChatModal } from '@features/toggle-chat/ui/ChatModal';
+import { ChatModal } from '@entities/chat/';
 
 
 

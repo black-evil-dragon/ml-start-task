@@ -27,11 +27,3 @@ body {
         }
     }
 }
-
-a {
-    color: inherit;
-
-    @include smooth-underline {
-        color: $color-primary;
-    }
-}
