@@ -1,7 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 import type { Chat, Message } from '../types';
-import { CHATS } from '@shared/data/data';
 
 
 
@@ -9,7 +8,9 @@ const initialState: Chat = {
     id: "",
     name: "",
 
-    loading: false,
+    isLoading: false,
+    isOpened: false,
+
     error: null as string | null,
 
     messages: [] as Message[]
@@ -20,14 +21,16 @@ const chatSlice = createSlice({
     initialState,
     reducers: {
         setActiveChat: (state, action: PayloadAction<Chat>) => {
-            state = {
-                ...action.payload
-            }
-            
+            state.id = action.payload.id;
+            state.name = action.payload.name;
+            state.messages = action.payload.messages;
+            state.isLoading = false;
+            state.isOpened = true;
+            state.error = null;
         },
 
         setLoading: (state, action: PayloadAction<boolean>) => {
-            state.loading = action.payload;
+            state.isLoading = action.payload;
         },
 
         setError: (state, action: PayloadAction<string | null>) => {
@@ -36,6 +39,16 @@ const chatSlice = createSlice({
 
         loadMessages: (state, action: PayloadAction<Message[]>) => {
             state.messages = action.payload;
+        },
+
+        closeActiveChat: (state) => {
+            state.isOpened = false;
+
+            // state.id = "";
+            // state.name = "";
+            // state.messages = [];
+            // state.loading = false;
+            // state.error = null;
         }
     }
 });

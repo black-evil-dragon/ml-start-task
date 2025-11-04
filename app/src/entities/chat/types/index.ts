@@ -16,7 +16,7 @@ export interface ChatMeta {
 export interface Chat extends ChatMeta {
     messages: Message[];
 
-
+    opened?: boolean;
     loading?: boolean;
     error?: string | null;
 }

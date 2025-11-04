@@ -1,13 +1,10 @@
 import classNames from "classnames";
-// import { useDispatch, useSelector } from "react-redux";
 
 import { UserProfileCard } from "@entities/user";
-
-// import { useChat } from "@features/toggle-chat";
-
+import { useChat } from "@entities/chat/";
 
 //* Shared
-// import { previewText } from "@shared/libs/previewText";
+import { previewText } from "@shared/libs/previewText";
 import { CompactCard } from "@shared/ui/components";
 import { ItemsContainer, stylesItemsContainer } from "@shared/ui/layout/";
 
@@ -18,9 +15,11 @@ import MyImage from '@shared/images/me.jpg'
 
 
 //* Component
+
+
 import stylesLayout from '@styles/modules/layout.module.scss'
 import styles from './profile.module.scss'
-import { useChat } from "@entities/chat/model/useChat";
+
 
 
 
@@ -33,7 +32,6 @@ const Profile = () => {
     }
 
     return (<div className={classNames(stylesLayout.pageContainer, styles.wrapper)}>
-
         <UserProfileCard
             image={MyImage}
             name="Семён Голган"
@@ -45,7 +43,7 @@ const Profile = () => {
         />
 
 
-
+        
         <div className={styles.content}>
             <div className={styles.contentRow}>
                 <ItemsContainer
@@ -55,8 +53,7 @@ const Profile = () => {
                     {CHATS.map((chat, key) => (<CompactCard
                         className={classNames(stylesItemsContainer.containerItem, stylesItemsContainer.containerItem2)}
                         title={chat.name}
-                        subText={""}
-                        url={""}
+                        subText={previewText(chat.messages[0]?.text || '', 50)}
 
                         onClick={() => openChat(chat.id)}
 

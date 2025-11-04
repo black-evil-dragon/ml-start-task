@@ -14,6 +14,7 @@
 
 
 .wrapper {
+    overflow: hidden;
     pointer-events: none;
     position: absolute;
 
@@ -50,7 +51,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         margin: calcFluid(8, 10) calcFluid(8, 10);
         padding-bottom: calcFluid(8, 10);
         border-bottom: 1px solid rgba(#fff, 1);
@@ -104,7 +105,6 @@
 
         gap: calcFluid(5, 10);
 
-        height: 100%;
 
         padding: calcFluid(8, 10);
     }
@@ -113,7 +113,30 @@
     .messages {
         display: flex;
         flex-direction: column;
-        gap: calcFluid(25, 30);
+        gap: calcFluid(30, 45);
+
+        overflow-y: auto;
+
+
+        &::-webkit-scrollbar {
+            width: 2px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $color-primary;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-button {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        scrollbar-width: thin;
+        scrollbar-color: $color-primary transparent;
+
 
         &-item {
             position: relative;
@@ -137,7 +160,7 @@
             }
 
             &--other {
-                @include theme-color("background-color", "text", $text-opacity-light);
+                @include theme-color("background-color", "page", $text-opacity-middle);
             }
 
             &--personal {

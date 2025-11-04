@@ -69,7 +69,7 @@ export const CHATS = [
     messages: [
       {
         id: "1",
-        text: "Бот для Telegram для студентов ВоГУ для выдачи расписания и ее рассылки",
+        text: "Telegram-бот для выдачи занятий ВоГУ и ее рассылки",
         senderId: "system"
       },
       {
