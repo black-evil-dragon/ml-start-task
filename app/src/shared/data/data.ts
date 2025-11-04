@@ -90,7 +90,7 @@ export const CHATS = [
       },
       {
         id: "2",
-        text: "Repo: https://github.com/black-evil-dragon/neuro-veil",
+        text: "Repo: https://github.com/black-evil-dragon/neuro-veil-demo",
         senderId: "system"
       }
     ]
