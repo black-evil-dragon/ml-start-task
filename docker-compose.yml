@@ -2,6 +2,7 @@ version: "3.9"
 
 networks:
   build_network:
+    driver: bridge
 
 services:
 
@@ -18,11 +19,9 @@ services:
       - './nginx.conf:/etc/nginx/nginx.conf'
   
     depends_on:
-      - app-build
+      - "frontend"
 
   app-dev:
-    container_name: app-dev
-
     volumes:
       - ./app:/app
       - /app/node_modules
@@ -38,16 +37,14 @@ services:
     environment:
       NODE_ENV: development
 
-  app-build:
-    container_name: app-build
+  frontend:
+    networks:
+      - build_network
 
     build:
       context: ./app
       dockerfile: Dockerfile
       target: production
-
-    networks:
-      - build_network
 
     environment:
       NODE_ENV: production
