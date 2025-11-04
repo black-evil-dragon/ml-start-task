@@ -23,6 +23,7 @@ export default defineConfig({
 
       "@styles": path.resolve(__dirname, "./src/app/styles"),
     },
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.scss', '.css']
   },
 
 
